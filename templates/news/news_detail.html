@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{%  block content %}
+
+<h1>{{ new.title }}</h1>
+<p>{{ new.text }}</p>
+
+Категория - {{ new.category }}<br>
+Тэги - {% for tag in new.tag.all %}
+            {{ tag.title }}
+        {% endfor %}
+<p>Автор:{{ new.user }} - {{ new.created }}</p>
+{% endblock content %}
