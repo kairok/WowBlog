@@ -1,3 +1,5 @@
+django-allauth
+django-summernote
 cairocffi==0.8.1
 CairoSVG==2.1.3
 certifi==2018.4.16

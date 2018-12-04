@@ -11,4 +11,21 @@
             {{ tag.title }}
         {% endfor %}
 <p>Автор:{{ new.user }} - {{ new.created }}</p>
+
+    {% for comment in comments %}
+        Пользователь -{{ comment.user }}<br>
+        Сообщение {{ comment.text }} <br>
+        {{ comment.created }}<br><br>
+    {% endfor %}
+
+    {% if user.is_active %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Send</button>
+    </form>
+    {% else %}
+        <h4>Чтобы оставить комментарий авторизуйтесь</h4>
+    {% endif %}
+
 {% endblock content %}

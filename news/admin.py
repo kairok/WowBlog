@@ -5,6 +5,8 @@ from news.models import *
 
 
 class NewsAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'user', 'created')
+    list_editable = ('user',)
     summernote_fields = ('text_min', 'text')
 
 
